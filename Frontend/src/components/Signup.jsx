@@ -126,12 +126,16 @@ function Signup() {
                       document.getElementById("my_modal_3").showModal()
                     }
                   >
-                    Login
-                  </button>{" "}
-                  <Login />
+                  <Link to={"/"}>Login</Link>
+                    
+                  </button>
+                  
+                  {/* <Login/>{" "} */}
                 </p>
               </div>
             </form>
+            {/* You can close the modal using document.getElementById('ID').closeModal() method */}
+            {/* {document.getElementById("my_modal_3").close()} */}
           </div>
         </div>
       </div>

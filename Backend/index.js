@@ -8,7 +8,12 @@ import userRoute from "./route/user.route.js";
 
 const app = express();
 
-app.use(cors());
+app.use(cors(
+    {	origin:["https://e-library-2-api.vercel.app/"],
+	    methods: ["POST", "GET"],
+	    credentials: true
+    }
+));
 app.use(express.json());
 
 dotenv.config();
@@ -19,8 +24,8 @@ const URI = process.env.MongoDBURI;
 // connect to mongoDB
 try {
     mongoose.connect(URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+        // useNewUrlParser: true,
+        // useUnifiedTopology: true,
     });
     console.log("Connected to mongoDB");
 } catch (error) {
